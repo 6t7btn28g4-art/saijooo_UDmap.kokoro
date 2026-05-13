@@ -1,0 +1,59 @@
+/* イントロ演出の全画面レイヤー */
+#introAnimation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    animation: fadeOut 1s ease forwards;
+    animation-delay: 3s;
+}
+
+/* 画像アニメーション */
+#introAnimation img {西条町酒蔵ロゴ.jpeg
+    width: 300px;
+    animation: rotateZoom 3s ease forwards;
+}
+
+@keyframes rotateZoom {
+    0% {
+        transform: scale(0.2) rotate(0deg);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.2) rotate(360deg);
+        opacity: 0.8;
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* ボタンは最初非表示 */
+#startBtn {
+    font-size: 32px;
+    padding: 20px 40px;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    display: none;
+}
